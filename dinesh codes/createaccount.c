@@ -66,6 +66,11 @@ void createaccount()
         printf("\tAccount number already exists.\n");
         continue;
         }
+        if(strcmp(accountnumber,"00000000000")==0)
+        {
+            printf("\tenter the valid digit !\n");
+            continue;
+        }
         strcpy(account_no[i], accountnumber);
         getchar();
     
