@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void checkbalance();
 
@@ -17,23 +18,41 @@ int main()
 void checkbalance()
 {
     char number[12];
-    int len;
+    int len, flag, m;
 
-    printf("Enter Your 11 digit Account Number: ");
-    scanf("%s", number);
-    len = strlen(number);
-
-    if (len == 11)
+    while (1)
     {
-        printf("Your Account Number is Valid. \n");
-        strcpy(account_number[i], number);
+        printf("Enter Your 11 digit Account Number: ");
+        scanf("%s", number);
+        len = strlen(number);
 
-        balance[i] = 1000;
-        printf("Your Current Balance is: %d\n", balance[i]);
-        i++;
-    }
-    else
-    {
-        printf("Invalid Account Number. \n");
+        if (len == 11)
+        {
+            flag = 1;
+
+            for (m = 0; m < len; m++)
+            {
+                if (!isdigit(number[m]))
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag)
+            {
+                printf("Your Account Number is Valid. \n");
+                strcpy(account_number[i], number);
+
+                balance[i] = 1000;
+                printf("Your Current Balance is: %d\n", balance[i]);
+                i++;
+                break;
+            }
+            else
+            {
+                printf("Invalid Account Number. \n");
+            }
+            printf("Try Again. \n");
+        }
     }
 }
