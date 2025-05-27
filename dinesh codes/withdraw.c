@@ -40,6 +40,11 @@ void withdraw()
             printf("\tInvalid! Use digits only.\n");
             continue;
         }
+        if (strcmp(accountnumber,"0000000000"))
+        {
+            printf("\t invalid account number !\n");
+            continue;
+        }
 
         int checkaccount = 0;
         for (int i = 0; i < 1000; i++)
