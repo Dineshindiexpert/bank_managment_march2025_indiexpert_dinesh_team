@@ -1,9 +1,7 @@
  
-char account_no[1000][12];
-char account_holder[1000][25];
-int balance[1000];
+ 
 
-void checkbalance();
+void checkbalance(); 
 
 int main()
 {
