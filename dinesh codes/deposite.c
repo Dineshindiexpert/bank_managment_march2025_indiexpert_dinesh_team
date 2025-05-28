@@ -1,16 +1,5 @@
  
-char account_no[1000][12];
-char account_holder[1000][25];
-int balance[1000];
-void deposite();
-int main()
-{
-
-    
-    
-    return 0;
-}
-void deposite()
+ void deposite()
 {
     char accountnumber[12];
     while (1)
